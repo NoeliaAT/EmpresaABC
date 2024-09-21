@@ -1,3 +1,5 @@
+using Api.Funcionalidades;
+using Api.Funcionalidades.Roles;
 using Api.Funcionalidades.Usuarios;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<UsuarioService>();
 
+builder.Services.AddServiceManager();
 
 var app = builder.Build();
 
@@ -19,11 +21,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.AddUsuarioEndpoints();
+
+app.MapUsuarioEndpoints();
+app.MapRolEndpoints();
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 app.Run();
+
+//video 4

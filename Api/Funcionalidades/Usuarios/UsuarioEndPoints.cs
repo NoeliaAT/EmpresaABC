@@ -4,7 +4,7 @@ namespace Api.Funcionalidades.Usuarios;
 
 public static class UsuarioEndpoints
 {
-    public static void AddUsuarioEndpoints(this WebApplication app)
+    public static void MapUsuarioEndpoints(this WebApplication app)
     {
         app.MapGet("/api/usuario", ([FromServices] IUsuarioService usuarioService) =>
         {

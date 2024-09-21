@@ -6,4 +6,11 @@ public class Rol
     public string Habilitado {get; set; } = string.Empty;
     public int FechaCreacion {get; set; }
     public List<Usuario> Usuarios {get; set; } = new List<Usuario>();
+
+    public Rol(string nombre, string habilitado, int fechaCreacion )
+    {
+        Nombre = nombre;
+        Habilitado = habilitado;
+        FechaCreacion = fechaCreacion;
+    }
 }
