@@ -1,10 +1,11 @@
+using Carter;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Funcionalidades.Roles;
 
-public static class RolEndpoints
+public class RolEndpoints : ICarterModule
 {
-    public static void MapRolEndpoints(this WebApplication app)
+    public void AddRoutes(IEndpointRouteBuilder app)
     {
         app.MapGet("/api/rol", ([FromServices] IRolService rolService) =>
         {
@@ -12,3 +13,4 @@ public static class RolEndpoints
         });
     }
 }
+

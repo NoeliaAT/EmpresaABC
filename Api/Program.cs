@@ -1,6 +1,7 @@
 using Api.Funcionalidades;
-using Api.Funcionalidades.Roles;
-using Api.Funcionalidades.Usuarios;
+using Api.Persistencia;
+using Carter;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddServiceManager();
+builder.Services.AddCarter();
+
 
 var app = builder.Build();
 
@@ -22,8 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapUsuarioEndpoints();
-app.MapRolEndpoints();
+app.MapCarter();
 
 app.UseHttpsRedirection();
 
