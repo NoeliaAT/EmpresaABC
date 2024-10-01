@@ -1,27 +1,27 @@
 using Aplicacion.Dominio;
 
-namespace Api.Funcionalidades.Roles;
+namespace Api.Funcionalidades.Rols;
 
 public interface IRolService
 {
-    List<Rol> GetRoles();
+    List<Rol> GetRols();
 }
 
 public class RolService : IRolService
 {
-    List<Rol> roles;
+    List<Rol> rols;
 
     public RolService()
     {
-        roles = new List<Rol>()
+        rols = new List<Rol>()
         {
             new Rol("Rol1", "Habilitado1", 21122009),
             new Rol("Rol2", "Habilitado2", 21122010)
         };
     }
 
-    public List<Rol> GetRoles()
+    public List<Rol> GetRols()
     {
-        return roles;
+        return rols;
     }
 }

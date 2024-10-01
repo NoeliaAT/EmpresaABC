@@ -3,30 +3,26 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aplicacion.Dominio;
 
-[Table("Usuario")]
+[Table("Rol")]
 public class Rol
 {
     [Key]
-    [Required]
-    public Guid IdRol {get; set; } = Guid.NewGuid();
-    
-    [Required]
-    [StringLength(50)]
-    public string Nombre {get; set; } = string.Empty;
-    
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IdRol { get; set; }
     [Required]
     [StringLength(50)]
-    public string Habilitado {get; set; } = string.Empty;
-    
+    public string? Nombre { get; set; } = string.Empty;
     [Required]
-    public int FechaCreacion {get; set; }
-    
-    public List<Usuario> Usuarios {get; set; } = new List<Usuario>();
+    public bool Habilitado { get; set; }
+    [Required]
+    public DateTime FechaCreacion { get; set; }
 
-    public Rol(string nombre, string habilitado, int fechaCreacion )
+    public Rol() { }
+
+    public Rol(string nombre, bool habilitado, DateTime fechaCreacion)
     {
-        this.Nombre = nombre;
-        this.Habilitado = habilitado;
-        this.FechaCreacion = fechaCreacion;
+        Nombre = nombre;
+        Habilitado = habilitado;
+        FechaCreacion = fechaCreacion;
     }
 }

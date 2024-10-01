@@ -6,12 +6,10 @@ namespace Api.Persistencia;
 public class AplicacionDbContext : DbContext
 {
     public AplicacionDbContext(DbContextOptions<AplicacionDbContext> opciones)
-        : base (opciones)
-        {
-        }
+        : base (opciones) {}
 
-        public DbSet<Usuario> Usuarios {get; set; }
-        public DbSet<Rol> Roles {get; set; }
+    public DbSet<Usuario> Usuario { get; set; }
+    public DbSet<Rol> Rol { get; set; }
+    public DbSet<UsuarioRol> UsuarioRol { get; set; }
+
 }
-
-

@@ -1,4 +1,4 @@
-using Api.Funcionalidades.Roles;
+using Api.Funcionalidades.Rols;
 using Api.Funcionalidades.Usuarios;
 
 namespace Api.Funcionalidades;

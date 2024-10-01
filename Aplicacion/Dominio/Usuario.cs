@@ -7,40 +7,30 @@ namespace Aplicacion.Dominio;
 public class Usuario
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IdUsuario { get; set; }
     [Required]
-    public Guid IdUsuario {get; set; } = Guid.NewGuid();
+    [StringLength(50)]
+    public string Nombre { get; set; } = string.Empty;
+    [Required]
+    [StringLength(50)]
+    public string Email { get; set; } = string.Empty;
+    [Required]
+    [StringLength(50)]
+    public string Contrasena { get; set; } = string.Empty;
+    [Required]
+    public bool Habilitado { get; set; }
+    [Required]
+    public DateTime FechaCreacion { get; set; }
 
-    [Required]
-    [StringLength(50)]
-    public string Nombre {get; set; } = string.Empty;
-    
-    [Required]
-    [StringLength(50)]
-    public string Email {get; set; } = string.Empty;
-    
-    [Required]
-    [StringLength(50)]
-    public string Usuari {get; set; } = string.Empty;
-    
-    [Required]
-    public int Contraseña {get; set; }
-    
-    [Required]
-    [StringLength(50)]
-    public string Habilitado {get; set; } = string.Empty;
-    
-    [Required]
-    public int FechaCreacion {get; set; }
-    
-    public List<Rol> Roles {get; set; } = new List<Rol>();
+    public Usuario() { }
 
-    public Usuario(string nombre, string email, string usuari, int contraseña, string habilitado, int fechaCreacion )
+    public Usuario(string nombre, string email, string contrasena, bool habilitado, DateTime fechaCreacion)
     {
-        this.Nombre = nombre;
-        this.Email = email;
-        this.Usuari = usuari;
-        this.Contraseña = contraseña;
-        this.Habilitado = habilitado;
-        this.FechaCreacion = fechaCreacion;
+        Nombre = nombre;
+        Email = email;
+        Contrasena = contrasena;
+        Habilitado = habilitado;
+        FechaCreacion = fechaCreacion;
     }
 }

@@ -9,12 +9,12 @@ En base a los requerimientos se pide:
 3- Crear los endpoints para las acciones descritas en la tabla para cada uno de los objetos de dominio
 4- Verificar el correcto funcionamiento de cada endpoint desde Swagger
 5- Realizar pruebas de integración (desde el archivo *.http):
-    Agregar y eliminar roles a usuarios
-    Agregar y eliminar usuarios  a roles
+    Agregar y eliminar rols a usuarios
+    Agregar y eliminar usuarios  a rols
 6- Subir código fuente del proyecto web a un repositorio github (se debe entregar únicamente el enlace al repositorio)
 
 -EjemploWebApi(del video) = WebApi(mi proyecto)
--Roles va a tener una lista de usuarios y Usuario va a tener una lista de Roles.
+-Rols va a tener una lista de usuarios y Usuario va a tener una lista de Rols.
 -Postman (investigar)
 -http (punto 5) https://httpyac.github.io/guide/examples.html
 
